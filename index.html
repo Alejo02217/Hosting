@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Sencillo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .counter {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .buttons button:active {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contador</h1>
+        <div id="counter" class="counter">0</div>
+        <div class="buttons">
+            <button id="decrement">Disminuir</button>
+            <button id="reset">Reiniciar</button>
+            <button id="increment">Aumentar</button>
+        </div>
+    </div>
+    <script>
+        // Seleccionamos los elementos del DOM
+        const counter = document.getElementById('counter');
+        const decrementBtn = document.getElementById('decrement');
+        const resetBtn = document.getElementById('reset');
+        const incrementBtn = document.getElementById('increment');
+
+        // Inicializamos el contador
+        let count = 0;
+
+        // Función para actualizar la pantalla con el valor del contador
+        function updateCounter() {
+            counter.textContent = count;
+        }
+
+        // Añadimos los event listeners para cada botón
+        decrementBtn.addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            updateCounter();
+        });
+
+        // Actualizamos el contador al cargar la página
+        updateCounter();
+    </script>
+</body>
+</html>
+
+    
+
